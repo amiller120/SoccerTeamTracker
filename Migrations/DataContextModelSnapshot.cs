@@ -25,14 +25,8 @@ namespace SoccerTeamTracker.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("JerseySize")
-                        .HasColumnType("text");
-
                     b.Property<string>("Name")
                         .HasColumnType("text");
-
-                    b.Property<int>("Number")
-                        .HasColumnType("integer");
 
                     b.Property<int>("TeamId")
                         .HasColumnType("integer");
@@ -51,35 +45,12 @@ namespace SoccerTeamTracker.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("Color")
-                        .HasColumnType("text");
-
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.ToTable("Teams");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Color = "Brown",
-                            Name = "Bears"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Color = "Green",
-                            Name = "Alligators"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Color = "Yellow",
-                            Name = "Cheetahs"
-                        });
                 });
 
             modelBuilder.Entity("SoccerTeamTracker.Models.Player", b =>
